@@ -11,7 +11,7 @@ export const useSignup = () => {
   } = useMutation({
     mutationFn: signUpRequest,
     onSuccess: (data) => {
-      console.log('Scuccessfuilly signed up', data);
+      console.log('Scuccessfully signed up', data);
     },
     onError: (error) => {
       console.error('Failed to sign up', error);
