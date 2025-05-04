@@ -7,10 +7,12 @@ import {
 
 import { UserButton } from '@/components/atoms/UserButton/UserButton';
 import { SidebarButton } from '@/components/molecules/SidebarButton/SidebarButton';
+import { WorkspaceSwitcher } from '@/components/organisms/Workspace/WorkspaceSwitcher';
 
 export const WorkspaceSidebar = () => {
   return (
     <aside className='w-[70px] h-full bg-[var(--slack-color)] flex flex-col gap-y-4 items-center pt-[10px] pb-[5px]'>
+      <WorkspaceSwitcher />
       <SidebarButton Icon={HomeIcon} label='Home' />
 
       <SidebarButton Icon={MessageSquareIcon} label='DMs' />
