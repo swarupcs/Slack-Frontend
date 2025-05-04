@@ -10,9 +10,13 @@ export const useSignin = () => {
     mutateAsync: signinMutation,
   } = useMutation({
     mutationFn: signInRequest,
-    onSuccess: (data) => {
-      console.log('Scuccessfully signed in', data);
+    onSuccess: (response) => {
+      console.log('Scuccessfully signed in', response);
       toast.success('Successfully signed in');
+      const userObject = JSON.stringify(response.data);
+
+      localStorage.setItem('user', userObject);
+      localStorage.setItem('token', response.data.token);
     },
     onError: (error) => {
       console.error('Failed to sign in', error);
