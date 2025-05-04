@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Route, Routes } from 'react-router-dom';
 
 import { SigninCard } from '@/components/organisms/Auth/SigninCard';
+import { Toaster } from '@/components/ui/sonner';
 import { Auth } from '@/pages/Auth/Auth';
 import { Notfound } from '@/pages/Notfound/Notfound';
 
@@ -33,6 +34,7 @@ function App() {
 
         <Route path='/*' element={<Notfound />} />
       </Routes>
+      <Toaster position='top-center' richColors />
     </QueryClientProvider>
   );
 }
