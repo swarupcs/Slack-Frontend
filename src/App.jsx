@@ -13,8 +13,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AppContextProvider>
         <AppRoutes />
-        <Toaster position='top-center' richColors />
       </AppContextProvider>
+        <Toaster position='top-center' richColors />
     </QueryClientProvider>
   );
 }
