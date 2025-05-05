@@ -76,6 +76,7 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
    --slack-color: #5c3B58;
+   --color-medium: #5E2C5F;  
 }
 
 .dark {
@@ -111,6 +112,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
   --color-slack: #481349;  
+  --color-medium: #5E2C5F;  
 }
 
 @layer base {
