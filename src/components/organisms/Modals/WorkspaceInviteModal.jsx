@@ -9,20 +9,32 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import { useResetJoinCode } from '@/hooks/apis/workspaces/useResetJoinCode';
 
 export const WorkspaceInviteModal = ({
   openInviteModal,
   setOpenInviteModal,
   workspaceName,
   joinCode,
+  workspaceId,
 }) => {
+
+  const { resetJoinCodeMutation } = useResetJoinCode(workspaceId);
   async function handleCopy() {
     const inviteLink = `${window.location.origin}/join/${joinCode}`;
     await navigator.clipboard.writeText(inviteLink);
     toast.success('Link copied to clipboard');
   }
 
-  async function handleResetCode() {}
+      async function handleResetCode() {
+        try {
+          await resetJoinCodeMutation();
+          toast.success( 'Join code reset successfully');
+        } catch (error) {
+          console.log('Error in resetting join code', error);
+          toast.error('Something went wrong while resetting join code');
+        }
+      }
 
   return (
     <Dialog open={openInviteModal} onOpenChange={setOpenInviteModal}>
