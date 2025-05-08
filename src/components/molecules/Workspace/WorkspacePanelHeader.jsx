@@ -24,8 +24,10 @@ export const WorkspacePanelHeader = ({ workspace }) => {
   console.log('auth', auth);
   console.log('workspacemembers', workspacemembers);
 
+  debugger;
   const isLoggedInUserAdminOfWorkspace = workspacemembers?.find(
-    (member) => member.memberId === auth?.user?._id && member.role === 'admin'
+    (member) =>
+      member.memberId._id === auth?.user?._id && member.role === 'admin'
   );
 
   console.log(isLoggedInUserAdminOfWorkspace);
